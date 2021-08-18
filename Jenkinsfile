@@ -6,7 +6,7 @@ pipeline {
 
             steps {
                 steps {
-                sh 'mvn -B -DskipTests clean package' 
+                 sh 'mvn clean compile'
                       }
                   }
           }
