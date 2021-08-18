@@ -11,16 +11,6 @@ pipeline {
             }
         }
 
-        stage ('Testing Stage') {
-
-            steps {
-                withMaven(maven : 'maven_3_8_2') {
-                    sh 'mvn test'
-                }
-            }
-        }
-
-
         stage ('Deployment Stage') {
             steps {
                 withMaven(maven : 'maven_3_8_2') {
