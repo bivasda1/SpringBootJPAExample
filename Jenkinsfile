@@ -2,13 +2,13 @@ pipeline {
     agent any
 
     stages {
-        stage ('Compile Stage') {
+        stage ('Build') {
 
             steps {
-                withMaven(maven : 'maven_3.8.2') {
-                    sh 'mvn clean compile'
-                }
-            }
-        }
+                steps {
+                sh 'mvn -B -DskipTests clean package' 
+                      }
+                  }
+          }
     }
 }
