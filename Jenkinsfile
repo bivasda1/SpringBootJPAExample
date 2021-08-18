@@ -10,12 +10,5 @@ pipeline {
                 }
             }
         }
-
-        stage ('Testing Stage') {
-
-            steps {
-                withMaven(maven : 'maven_3.8.2') {
-                    sh 'mvn test'
-                }
-            }
-        }
+    }
+}
