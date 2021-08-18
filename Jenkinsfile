@@ -9,9 +9,13 @@ pipeline {
                     sh 'mvn clean compile'
                 }
             }
+        }
+        stage('Test Stage'){
+            
             steps {
                 withMaven(maven : 'maven_3_8_2') {
                     sh 'mvn test'
+                  }
                 }
             }
         }
