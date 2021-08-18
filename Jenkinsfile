@@ -2,13 +2,13 @@ pipeline {
     agent any
 
     stages {
-        stage ('Build') {
+        stage ('Compile Stage') {
 
             steps {
-                steps {
-                 sh 'mvn clean compile'
-                      }
-                  }
-          }
+                withMaven(maven : 'maven_3_8_2') {
+                    sh 'mvn clean compile'
+                }
+            }
+        }
     }
 }
